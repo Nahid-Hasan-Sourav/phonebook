@@ -13,7 +13,7 @@ class CustomerController extends Controller
 {
     private $groups,$customers;
     public function index(){
-        $customers = Customer::with('group')->get();
+        $this->groups = Groups::all();
 
         return view('admin.customer.index',['groups'=>$this->groups]);
 
@@ -130,5 +130,23 @@ class CustomerController extends Controller
 
     public function manageCustomer(){
 
+    }
+
+    public function deleteCustomer($id){
+        $del = Customer::deleteCustomer($id);
+
+        if($del){
+            return response()->json([
+                'status' => "200",
+                'del' => $del
+            ]);
+        }
+
+        else{
+            return response()->json([
+                'status' => "400",
+                'del' => $del
+            ]);
+        }
     }
 }

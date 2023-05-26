@@ -43,6 +43,14 @@ class Customer extends Model
         self::$customer->save();
     }
 
+    public static function deleteCustomer($id){
+        $customer = Customer::find($id);
+
+        $customer->delete();
+
+        return $status="true";
+    }
+
 
 
 }

@@ -33,6 +33,7 @@ Route::get('/dashboard/add-customer',[CustomerController::class, 'index'])->name
 Route::get('/dashboard/manage-customer',[CustomerController::class, 'manage'])->name('manage-customer');
 
 Route::post('/dashboard/create-customer',[CustomerController::class, 'createCustomer'])->name('create-customer');
+Route::delete('/dashboard/customer/delete/{id}',[CustomerController::class, 'deleteCustomer'])->name('customer.delete');
 
 Route::get('/dashboard/groups',[GroupsController::class, 'index'])->name('groups');
 Route::post('/dashboard/add-new-group',[GroupsController::class, 'addGroup'])->name('add-new-group');

@@ -143,8 +143,7 @@ jQuery(document).ready(function(){
 
 
 
-    // delete customer
+   
 
-    
 
 });

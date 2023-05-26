@@ -44,9 +44,16 @@
                                 <label class="form-label col-md-3"></label>
                                 <select class="form-select col-md-9 " id="inlineFormCustomSelect" name="group_id">
                                     <option selected="" >--- Select Your Group ---</option>
+
+
                                     @foreach($groups as $group)
                                         <option value="{{$group->id}}">{{$group->group_name}}</option>
                                     @endforeach
+
+
+
+
+
                                 </select>
                             </div>
                         </div>

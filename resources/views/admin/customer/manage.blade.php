@@ -1,5 +1,4 @@
 @extends('admin.master')
-
 @section('body')
     <div class="row">
 
@@ -63,7 +62,12 @@
                                             @break
                                         @endif
                                     @endforeach --}}
-                                    {{$customer->group->group_name }}
+
+                                        {{-- @if($customer->group)
+                                        {{ $customer->group->group_name }}
+                                        @endif --}}
+                                        {{$customer->group ? $customer->group->group_name : "N/A" }}
+
                                 </td>
 
                                 <td>
@@ -73,7 +77,7 @@
                                             edit
                                         </a>
 
-                                        <button type='submit' class='btn btn-danger btn-sm delete-customer' value="{{}}">
+                                        <button type='submit' class='btn btn-danger btn-sm delete_customer_btn' value="{{$customer->id}}">
                                             <i class='fa fa-trash'></i>
                                             delete
                                         </button>
@@ -104,6 +108,10 @@
 
 
             </div>
-        </div> <!-- end col -->
+        </div>
+
+        @include('admin.includes.deleteModal')<!-- end col -->
     </div>
+
+
 @endsection

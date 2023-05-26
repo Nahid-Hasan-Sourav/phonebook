@@ -141,6 +141,7 @@
 
 {{--aditional ajax.js--}}
 <script src="{{asset('/')}}admin/assets/javascript/ajax.js"></script>
+<script src="{{asset('/')}}admin/assets/javascript/customer_crud.js"></script>
 {{--aditional ajax.js end--}}
 
 
